@@ -17,6 +17,7 @@
 	<!-- Spring MVC Annotation -->
 	<context:annotation-config />
 	<mvc:annotation-driven />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Cấu hình view -->
 	<bean
@@ -28,6 +29,6 @@
 
 	<!-- Cấu hình package chứa các controller -->
 	<context:component-scan
-		base-package="bc.controller" />
+		base-package="bc.controller, bc.bean" />
 
 </beans>
