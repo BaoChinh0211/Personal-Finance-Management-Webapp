@@ -24,6 +24,24 @@ public class UsersEntity {
     @Column(name = "Email")
     private String email;
 
+    public UsersEntity() {
+    }
+
+    public UsersEntity(int userId, String fullName, String username, String password, String email) {
+        this.userId = userId;
+        this.fullName = fullName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
+    public UsersEntity(String fullName, String username, String password, String email) {
+        this.fullName = fullName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
     public int getUserId() {
         return userId;
     }
@@ -75,5 +93,16 @@ public class UsersEntity {
     @Override
     public int hashCode() {
         return Objects.hash(userId, fullName, username, password, email);
+    }
+
+    @Override
+    public String toString() {
+        return "UsersEntity{" +
+                "userId=" + userId +
+                ", fullName='" + fullName + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

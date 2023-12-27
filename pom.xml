@@ -12,6 +12,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
+    <jsp.api.version>6.0.0</jsp.api.version>
+    <spring.version>6.1.0</spring.version>
+    <jstl.version>3.0.0</jstl.version>
+    <slf4j.version>2.0.9</slf4j.version>
+    <mail.version>2.1.2</mail.version>
+    <hibernate-core.version>6.4.1.Final</hibernate-core.version>
   </properties>
 
   <dependencies>
@@ -29,6 +35,7 @@
       <version>3.0.1</version>
     </dependency>
 
+
     <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
     <dependency>
       <groupId>jakarta.servlet</groupId>
@@ -45,19 +52,11 @@
       <version>3.3.0</version>
     </dependency>
 
-
-    <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/jstl/jstl -->
-    <dependency>
-      <groupId>jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
+      <groupId>jakarta.servlet.jsp.jstl</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+      <version>${jstl.version}</version>
     </dependency>
 
 
@@ -80,7 +79,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -88,14 +87,14 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -111,7 +110,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -119,14 +118,14 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -134,7 +133,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -142,7 +141,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-framework-bom</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
       <type>pom</type>
     </dependency>
 
@@ -151,7 +150,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-instrument</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -166,14 +165,14 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-jms -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jms</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -181,28 +180,28 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-messaging</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-oxm -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-oxm</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -210,14 +209,14 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -225,7 +224,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--
@@ -241,7 +240,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-websocket</artifactId>
-      <version>6.1.0</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/antlr/antlr -->
@@ -283,7 +282,7 @@
     <dependency>
       <groupId>org.hibernate.orm</groupId>
       <artifactId>hibernate-c3p0</artifactId>
-      <version>6.4.1.Final</version>
+      <version>${hibernate-core.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
@@ -297,7 +296,7 @@
     <dependency>
       <groupId>org.hibernate.orm</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>6.4.1.Final</version>
+      <version>${hibernate-core.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-ehcache -->
@@ -353,14 +352,14 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>2.0.9</version>
+      <version>${slf4j.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>2.0.9</version>
+      <version>${slf4j.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -389,6 +388,73 @@
           <version>RELEASE</version>
           <scope>compile</scope>
       </dependency>
+
+    <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+      <version>3.1.0-M1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>8.0.1.Final</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>3.0.0-beta1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+      <type>pom</type>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/jakarta.mail/jakarta.mail-api -->
+    <dependency>
+      <groupId>jakarta.mail</groupId>
+      <artifactId>jakarta.mail-api</artifactId>
+      <version>${mail.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
+    <dependency>
+      <groupId>jakarta.activation</groupId>
+      <artifactId>jakarta.activation-api</artifactId>
+      <version>${mail.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.14.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.sun.mail/jakarta.mail -->
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>jakarta.mail</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.sun.activation/jakarta.activation -->
+    <dependency>
+      <groupId>com.sun.activation</groupId>
+      <artifactId>jakarta.activation</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+
+
 
 
   </dependencies>

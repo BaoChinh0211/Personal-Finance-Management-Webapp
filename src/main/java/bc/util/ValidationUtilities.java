@@ -4,14 +4,14 @@ public class ValidationUtilities {
     public ValidationUtilities() {
     }
 
-    public static int checkEmailValid(String email) {
+    public static int checkEmailValid (String email){
         String emailRegex = "^[\\w]+([\\w.][\\w]+)*@[\\w]+(\\.\\w+)+$";
         String[] emailSplit = email.split("[@]", 2);
-        if (!email.matches(emailRegex)) {
+        if (!email.matches(emailRegex))
             return 2;
-        } else {
-            return emailSplit[0].length() >= 6 && emailSplit[0].length() <= 30 ? 0 : 1;
-        }
+        if (emailSplit[0].length() < 6 || emailSplit[0].length() > 30)
+            return 1;
+        return 0;
     }
 
     public static boolean checkUsernameValid(String username) {
